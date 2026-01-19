@@ -1,7 +1,6 @@
-/* IMPORTAR FUENTES MÍSTICAS */
+/* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
-/* --- RESET BÁSICO --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -9,207 +8,87 @@ body {
     line-height: 1.6; 
     color: #333; 
     background-color: #fbf7ff; 
-    overflow-x: hidden; /* Evita scroll lateral */
+    overflow-x: hidden; 
 }
 
 h1, h2, h3 { font-family: 'Cinzel', serif; }
 
-/* =========================================
-   NAVBAR (Vidrio Oscuro)
-   ========================================= */
+/* NAVBAR */
 .navbar {
     background: rgba(10, 5, 20, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    position: fixed; width: 100%; top: 0; z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
-
-.logo { 
-    font-weight: 700; font-size: 1.4rem; color: #fff;
-    text-shadow: 0 0 10px rgba(171, 71, 188, 0.8);
-}
-
+.logo { font-weight: 700; font-size: 1.4rem; color: #fff; text-shadow: 0 0 10px rgba(171, 71, 188, 0.8); }
 .nav-links { display: flex; gap: 20px; list-style: none; }
-.nav-links a { 
-    text-decoration: none; color: #e0d0ff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; 
-}
+.nav-links a { text-decoration: none; color: #e0d0ff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 .nav-links a:hover { color: #ffd700; }
 .nav-social a { color: #e0d0ff; margin-left: 10px; font-size: 1.2rem; }
 
-/* =========================================
-/* =========================================
-   HERO SECTION (Portada con Video)
-   ========================================= */
-/* =========================================
-   HERO SECTION (Portada con Video Fijo)
-   ========================================= */
+/* 🔴 HERO SECTION CORREGIDA PARA VIDEO 🔴 */
 .hero { 
-    position: relative; /* Necesario para contener los elementos absolutos */
-    height: 100vh;      /* Ocupa toda la altura de la pantalla */
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    background-color: #1a0b2e; /* Color de fondo mientras carga */
-    overflow: hidden;   /* Corta cualquier sobrante del video */
-    padding: 0 20px;
+    position: relative;
+    height: 100vh; /* Pantalla completa */
+    width: 100%;
+    display: flex; align-items: center; justify-content: center; text-align: center; 
+    overflow: hidden; /* Corta lo que sobre del video */
+    background-color: #000; /* Fondo negro por si tarda en cargar */
 }
 
-/* ESTILOS PARA EL VIDEO DE FONDO (La magia para que no rompa nada) */
-.video-bg {
-    position: absolute; /* Lo saca del flujo normal para ponerlo atrás */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrado perfecto */
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; /* Se va al fondo de todo */
-    object-fit: cover; /* CLAVE: Hace que el video cubra todo sin deformarse, igual que una imagen de fondo */
-}
-
-/* Capa oscura (Overlay) para leer el texto */
-.hero-overlay {
+/* Contenedor del video */
+.video-wrapper {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Degradado para que se parezca a tu imagen de referencia */
+    z-index: 0; /* Al fondo */
+    overflow: hidden;
+}
+
+/* El video en sí */
+.video-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%); /* Centrado absoluto */
+    min-width: 100%; min-height: 100%; 
+    width: auto; height: auto;
+    object-fit: cover; /* Cubre todo sin deformarse */
+}
+
+/* Capa oscura encima del video */
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to bottom, rgba(20,5,30,0.4), rgba(10,5,20,0.8));
-    z-index: 0; /* Entre el video y el texto */
+    z-index: 1; /* Encima del video */
 }
 
-/* El contenido (Texto y botones) */
+/* Contenido (Texto) */
 .hero-content { 
-    position: relative; 
-    z-index: 1; /* Al frente de todo */
-    max-width: 800px; 
+    position: relative; z-index: 2; /* Encima de todo */
+    max-width: 800px; padding: 0 20px; 
 }
 
-/* --- Estilos de Texto y Botones (Igual que antes) --- */
 .titulo-mistico {
     font-size: 4rem; margin-bottom: 10px; 
     color: #fff; text-shadow: 0 0 20px rgba(171, 71, 188, 0.8);
     font-weight: 700;
 }
-.subtitle { 
-    font-size: 1.2rem; color: #ffd700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; 
-}
-.phrase { 
-    font-style: italic; color: #eee; font-size: 1.1rem; margin-bottom: 40px; 
-}
+.subtitle { font-size: 1.2rem; color: #ffd700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
+.phrase { font-style: italic; color: #eee; font-size: 1.1rem; margin-bottom: 40px; }
 
 /* Botones */
-.botones-hero { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.botones-hero { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .btn-whatsapp { 
     background-color: #00695c; color: white; padding: 14px 30px; border-radius: 50px; 
     text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.3); transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
 }
 .btn-whatsapp:hover { background-color: #004d40; transform: translateY(-3px); }
+
 .btn-instagram { 
     background-color: rgba(255, 255, 255, 0.1); color: white; padding: 14px 30px; border-radius: 50px; 
     text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(5px); transition: 0.3s;
-}
-.btn-instagram:hover { background-color: #C13584; border-color: transparent; transform: translateY(-3px); }
-/* =========================================
-   SECCIONES Y CARDS
-   ========================================= */
-section { padding: 80px 20px; max-width: 1000px; margin: auto; text-align: center; }
-
-.titulo-seccion { 
-    color: #2c0e3a; font-size: 2.5rem; margin-bottom: 50px; 
-    border-bottom: 2px solid #ab47bc; display: inline-block; padding-bottom: 10px;
-}
-
-.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-
-.card { 
-    background: #fff; padding: 30px; border-radius: 20px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid #eee;
-    transition: 0.4s; display: flex; flex-direction: column;
-    /* Inicio oculto para efecto scroll */
-    opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.card.visible { opacity: 1; transform: translateY(0); }
-
-.card:hover { transform: translateY(-10px) !important; box-shadow: 0 15px 40px rgba(171, 71, 188, 0.2); }
-
-.icon-container { font-size: 2.5rem; margin-bottom: 20px; } 
-
-.card h3 { color: #4a148c; margin-bottom: 15px; font-size: 1.4rem; }
-
-.puntos-clave { list-style: none; text-align: left; margin-bottom: 20px; font-size: 0.95rem; }
-.puntos-clave li { margin-bottom: 10px; color: #555; display: flex; align-items: center; gap: 10px; }
-.puntos-clave i { color: #ffd700; font-size: 0.9rem; }
-
-.delivery-info { 
-    background: #f4f4f4; color: #555; padding: 10px; border-radius: 10px; 
-    font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.delivery-info.vivo { background: #efebe9; color: #5d4037; }
-
-.btn-card-action {
-    margin-top: auto; padding: 12px; background-color: #6a1b9a; color: white; 
-    text-decoration: none; border-radius: 10px; font-weight: 600; 
-    transition: 0.3s; display: block; width: 100%;
-}
-.btn-card-action:hover { background-color: #4a148c; }
-.btn-card-action.destacado { background: linear-gradient(45deg, #7b1fa2, #ab47bc); }
-
-/* =========================================
-   FOOTER
-   ========================================= */
-.footer-mistico {
-    background: #0f0518; 
-    color: #e0d0ff;
-    padding-top: 50px;
-    margin-top: 80px;
-    border-top: 3px solid #ab47bc;
-}
-
-.footer-container {
-    max-width: 1000px; margin: 0 auto; padding: 0 20px 40px;
-    display: flex; justify-content: space-between; align-items: flex-start;
-    flex-wrap: wrap; gap: 40px;
-}
-
-.footer-left { text-align: left; max-width: 400px; }
-.footer-left h3 { font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
-.footer-left h4 { font-family: 'Spectral', serif; font-style: italic; color: #ffd700; margin-bottom: 15px; font-weight: 400; }
-
-.footer-right { text-align: right; }
-.footer-right h3 { font-size: 1.4rem; color: #fff; margin-bottom: 20px; }
-
-.social-icons { display: flex; gap: 15px; justify-content: flex-end; }
-.social-icons a {
-    width: 40px; height: 40px; background: rgba(255,255,255,0.1); 
-    display: flex; align-items: center; justify-content: center; border-radius: 50%;
-    color: #fff; text-decoration: none; transition: 0.3s; font-size: 1.2rem;
-}
-.social-icons a:hover { background: #ab47bc; transform: translateY(-3px); }
-
-.footer-bottom {
-    background-color: #000; padding: 20px; text-align: center; font-size: 0.85rem; opacity: 0.7;
-}
-
-/* CELULAR */
-@media (max-width: 768px) {
-    .titulo-mistico { font-size: 3rem; }
-    .footer-container { flex-direction: column; text-align: center; justify-content: center; }
-    .footer-left, .footer-right { text-align: center; width: 100%; }
-    .social-icons { justify-content: center; }
-}
-
-
+    border: 1px solid rgba(255,255,2
