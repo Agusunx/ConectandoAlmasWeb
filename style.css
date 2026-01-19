@@ -100,7 +100,7 @@ body {
    ========================================= */
 .hero { 
     min-height: 90vh; 
-    /* Asegurate que fondo.png esté en la carpeta */
+    /* FONDO: Se mantiene tu fondo2.png */
     background-image: url('fondo2.png'); 
     background-size: cover;
     background-position: center;
@@ -144,10 +144,10 @@ body {
 /* BOTONES HERO */
 .botones-hero { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
-/* Botón WhatsApp (Verde Oscuro Corregido) */
+/* --- AQUÍ ESTÁ EL CAMBIO DE COLOR WHATSAPP --- */
 .btn-whatsapp { 
-    background-color: #0A5C50; /* Verde Esmeralda Profundo */
-    box-shadow: 0 5px 15px rgba(10, 92, 80, 0.4); 
+    background-color: #128C7E; /* Verde Teal (Oficial de WhatsApp) - Más claro y elegante */
+    box-shadow: 0 5px 15px rgba(18, 140, 126, 0.4); 
     padding: 14px 28px; 
     text-decoration: none; 
     border-radius: 50px; 
@@ -160,7 +160,7 @@ body {
 }
 .btn-whatsapp:hover { 
     transform: translateY(-3px); 
-    background-color: #064037; 
+    background-color: #0E6B5E; /* Un toque más oscuro al pasar el mouse */
 }
 
 /* Botón Instagram */
