@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SerieSunx | Stream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Series<span>Sunx</span></a>
+</nav>
+
+    <div class="container">
+        
+        <div class="player-container">
+            <div id="video-wrapper">
+                
+                <div id="poster-inicial" class="poster-overlay">
+                    <div class="hero-content">
+                        <h1 id="hero-titulo">Selecciona una película</h1>
+                        <p id="hero-desc">Elige un título de tu biblioteca para ver la reseña aquí.</p>
+                        <button id="btn-play-grande">▶ REPRODUCIR AHORA</button>
+                    </div>
+                </div>
+                
+                <video id="reproductor" controls class="hidden">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
+
+            <div id="zona-episodios" class="episodes-container hidden">
+                <h3>Temporada 1 - Capítulos:</h3>
+                <div id="lista-capitulos" class="episodes-grid"></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Tu Biblioteca</h2>
+        <div id="grid-peliculas" class="movie-grid"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

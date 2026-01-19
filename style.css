@@ -1,0 +1,130 @@
+/* RESET Y BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+nav {
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    position: fixed; width: 100%; top: 0; z-index: 100;
+}
+.logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+.logo span { color: #e50914; }
+
+.container {
+    width: 90%; max-width: 1200px;
+    margin: 90px auto 40px auto;
+}
+
+/* REPRODUCTOR / HERO SECTION */
+.player-container { width: 100%; margin-bottom: 50px; }
+
+#video-wrapper {
+    position: relative; width: 100%; aspect-ratio: 16/9;
+    background: #000; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 1px solid #333;
+}
+
+/* ESTILO DE LA PORTADA GIGANTE */
+.poster-overlay {
+    position: absolute; inset: 0;
+    /* Esto centra la imagen y la cubre todo */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; align-items: flex-end; /* Texto abajo */
+}
+
+/* DEGRADADO PARA QUE SE LEA EL TEXTO */
+.poster-overlay::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, #121212 10%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+/* TEXTO SOBRE LA PORTADA */
+.hero-content {
+    position: relative; z-index: 2;
+    padding: 40px; width: 100%;
+}
+
+#hero-titulo {
+    font-size: 2.5rem; font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+#hero-desc {
+    font-size: 1rem; color: #ddd;
+    max-width: 600px; margin-bottom: 25px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    line-height: 1.5;
+}
+
+#btn-play-grande {
+    background: #e50914; color: white; border: none;
+    padding: 12px 35px; font-size: 1.1rem; font-weight: 600;
+    border-radius: 4px; cursor: pointer;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+    transition: transform 0.2s, background 0.2s;
+    display: inline-flex; align-items: center; gap: 10px;
+}
+#btn-play-grande:hover { transform: scale(1.05); background: #ff0f1f; }
+
+/* Video y Utilidades */
+video { width: 100%; height: 100%; outline: none; background:black; position:relative; z-index:10; }
+.hidden { display: none !important; }
+
+/* SERIES */
+.episodes-container {
+    margin-top: 0; background: #1a1a1a; padding: 20px;
+    border-radius: 0 0 12px 12px; border: 1px solid #333; border-top: none;
+}
+.episodes-container h3 { color: #aaa; font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.episodes-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.episode-btn {
+    background: #2a2a2a; color: white; border: 1px solid #333;
+    padding: 10px 20px; border-radius: 4px; cursor: pointer;
+    font-family: 'Poppins', sans-serif; transition: 0.2s;
+}
+.episode-btn:hover { background: #444; border-color: #999; }
+.episode-btn.playing { background: #e50914; border-color: #e50914; font-weight: bold; }
+
+/* GRID BIBLIOTECA */
+.section-title { font-size: 1.4rem; color: white; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #e50914; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+
+.movie-card {
+    background: #1e1e1e; border-radius: 8px; overflow: hidden;
+    cursor: pointer; transition: 0.3s; position: relative; aspect-ratio: 2/3; /* Formato Poster Vertical */
+    background-size: cover; background-position: center;
+}
+.movie-card:hover { transform: scale(1.05); z-index: 10; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+.year-badge {
+    position: absolute; top: 10px; right: 10px;
+    background: #007aff; color: white; padding: 2px 6px;
+    border-radius: 4px; font-size: 0.7rem; font-weight: bold;
+}
+.card-content {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 15px;
+}
+.card-title { font-size: 0.9rem; font-weight: 600; text-align: center; }
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    letter-spacing: 1px;
+    
+    /* AGREGA ESTO: */
+    text-decoration: none; /* Quita el subrayado */
+    color: white;          /* Mantiene el color blanco */
+    cursor: pointer;       /* Muestra la manito al pasar el mouse */
+}
