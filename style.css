@@ -1,23 +1,31 @@
+/* Importar Tipografías Místicas de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap');
+
 /* --- RESET BÁSICO --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* Tipografía base clásica y legible */
+    font-family: 'Spectral', serif;
     line-height: 1.6; 
     color: #333; 
     background-color: #fbf7ff; 
     scroll-behavior: smooth; 
 }
 
+/* Títulos con tipografía mística */
+h1, h2, h3, .logo, .titulo-mistico {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 /* =========================================
    NAVBAR PREMIUM (Efecto Vidrio Esmerilado)
    ========================================= */
 .navbar {
-    background: rgba(15, 5, 30, 0.7); /* Más transparente para que luzca el fondo */
-    backdrop-filter: blur(20px);      /* Desenfoque potente (estilo iPhone) */
+    background: rgba(15, 5, 30, 0.8); /* Un poco más oscuro para contraste */
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    
-    padding: 15px 5%;
+    padding: 12px 5%; /* Menos padding vertical */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,30 +33,26 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    
-    /* Borde fino brillante */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .logo { 
-    font-family: 'Georgia', serif; 
     font-weight: bold; 
-    font-size: 1.6rem; 
+    font-size: 1.5rem; 
     color: #fff;
-    /* Doble sombra para efecto neón */
     text-shadow: 0 0 10px rgba(171, 71, 188, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
     letter-spacing: 1px;
 }
 
-.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
 
 .nav-links a { 
     text-decoration: none; 
     color: #e0d0ff; 
     font-weight: 500; 
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     position: relative;
     transition: 0.3s;
     letter-spacing: 1px;
@@ -66,7 +70,7 @@ body {
 .nav-links a:hover::after { width: 100%; left: 0; }
 
 .nav-social a { 
-    margin-left: 15px; color: #e0d0ff; font-size: 1.2rem;
+    margin-left: 12px; color: #e0d0ff; font-size: 1.1rem;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 .nav-social a:hover { 
@@ -77,217 +81,244 @@ body {
    HERO SECTION (Portada Estética)
    ========================================= */
 .hero { 
-    min-height: 100vh; /* Pantalla completa */
-    
-    /* CAMBIO CLAVE: Referencia exacta al archivo de tu imagen */
-    background-image: url('fondo2.jpg'); 
-    
+    min-height: 100vh;
+    background-image: url('fondo2.jpg'); /* Asegurate que este sea el nombre correcto */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto Parallax elegante */
+    background-attachment: fixed;
     display: flex; 
     align-items: center; 
     justify-content: center; 
     text-align: center; 
-    padding: 150px 20px 100px;
+    padding: 120px 20px 80px; /* Menos espacio arriba y abajo */
     color: white; 
     position: relative;
     background-color: #1a0b2e; 
 }
 
-/* Overlay Degradado: Hace que el texto se lea perfecto sobre cualquier foto */
+/* Overlay OSCURO para que se lea el texto */
 .hero::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(20,5,30,0.6) 0%, rgba(32,10,46,0.3) 50%, #fbf7ff 100%);
+    /* Degradado mucho más oscuro y cubritivo */
+    background: linear-gradient(to bottom, rgba(15, 5, 30, 0.9) 0%, rgba(30, 10, 50, 0.8) 60%, rgba(15, 5, 30, 0.95) 100%);
     z-index: 1;
 }
 .hero-content { position: relative; z-index: 2; max-width: 900px; }
 
 /* TÍTULO PRINCIPAL DE LUJO */
 .titulo-mistico {
-    font-size: 5rem; 
-    margin-bottom: 10px; 
-    /* Texto con degradado metálico */
+    font-size: 4.5rem; 
+    margin-bottom: 15px; 
     background: linear-gradient(to bottom right, #ffffff, #f3e5f5, #dcbbf9);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; 
-    /* Sombra profunda */
-    filter: drop-shadow(0 4px 15px rgba(100, 30, 120, 0.5));
+    filter: drop-shadow(0 4px 15px rgba(100, 30, 120, 0.6));
     letter-spacing: -1px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
 }
 
 .subtitle { 
-    font-size: 1.3rem; color: #e0d0ff; text-transform: uppercase; 
-    letter-spacing: 3px; margin-bottom: 30px; font-weight: 600; 
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    font-size: 1.2rem; color: #e0d0ff; text-transform: uppercase; 
+    letter-spacing: 3px; margin-bottom: 25px; font-weight: 600; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
 }
 .phrase { 
-    font-family: 'Georgia', serif; font-style: italic; 
-    opacity: 0.95; font-size: 1.3rem; margin-bottom: 45px; color: #fff; 
+    font-style: italic; 
+    opacity: 0.95; font-size: 1.2rem; margin-bottom: 40px; color: #fff; 
     text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-/* BOTONES HERO */
+/* BOTONES HERO (Ahora se leen perfecto) */
 .botones-hero { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
 .btn-whatsapp { 
-    background-color: #128C7E; /* Verde Teal Elegante */
-    box-shadow: 0 10px 25px rgba(18, 140, 126, 0.4); 
-    padding: 16px 35px; 
+    background-color: #128C7E;
+    box-shadow: 0 10px 25px rgba(18, 140, 126, 0.5); 
+    padding: 14px 32px; 
     text-decoration: none; border-radius: 50px; font-weight: bold; 
     transition: all 0.3s ease; 
     display: flex; align-items: center; gap: 10px; color: #ffffff; 
-    border: 1px solid rgba(255,255,255,0.2);
-    font-size: 1.1rem;
+    border: 1px solid rgba(255,255,255,0.3); /* Borde para resaltar */
+    font-size: 1rem;
 }
 .btn-whatsapp:hover { 
     transform: translateY(-5px); 
     background-color: #0E6B5E; 
-    box-shadow: 0 15px 30px rgba(18, 140, 126, 0.6);
+    box-shadow: 0 15px 30px rgba(18, 140, 126, 0.7);
 }
 
 .btn-instagram { 
-    background: rgba(255, 255, 255, 0.1); /* Cristal */
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,0.4);
-    padding: 16px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; 
+    background: rgba(255, 255, 255, 0.15); /* Más opaco para contraste */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 14px 32px; text-decoration: none; border-radius: 50px; font-weight: bold; 
     transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 .btn-instagram:hover { 
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     border-color: transparent;
     transform: translateY(-5px); 
+    text-shadow: none;
 }
 
 /* =========================================
-   SECCIONES Y CARDS FLOTANTES
+   SECCIONES Y CARDS (Más compactas y elegantes)
    ========================================= */
-section { padding: 100px 20px; max-width: 1100px; margin: auto; text-align: center; }
-h2 { 
-    color: #2c0e3a; font-size: 3rem; margin-bottom: 60px; position: relative; display: inline-block; 
+section { 
+    padding: 60px 20px; /* Menos espacio blanco vertical */
+    max-width: 1100px; margin: auto; text-align: center; 
+}
+.titulo-seccion { 
+    color: #2c0e3a; font-size: 2.8rem; margin-bottom: 40px; position: relative; display: inline-block; 
     font-weight: 700; letter-spacing: -1px;
 }
-h2::after { content: ''; display: block; width: 50px; height: 4px; background: #ab47bc; margin: 15px auto 0; border-radius: 10px; }
+.titulo-seccion::after { content: ''; display: block; width: 50px; height: 3px; background: #ab47bc; margin: 15px auto 0; border-radius: 10px; }
 
-.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
 .card { 
-    background: #fff; padding: 40px 30px; border-radius: 30px; 
-    /* Sombra suave y difusa (moderna) */
-    box-shadow: 0 20px 40px rgba(150, 150, 200, 0.15); 
+    background: #fff; padding: 30px 25px; border-radius: 25px; 
+    box-shadow: 0 15px 40px rgba(150, 150, 200, 0.1); 
     border: 1px solid rgba(255, 255, 255, 1);
-    display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    display: flex; flex-direction: column; transition: all 0.3s ease; 
     position: relative; overflow: hidden;
+    height: 100%; /* Para que todas tengan la misma altura */
 }
 .card:hover { 
-    transform: translateY(-15px); 
-    box-shadow: 0 30px 60px rgba(138, 43, 226, 0.2);
+    transform: translateY(-10px); 
+    box-shadow: 0 25px 50px rgba(138, 43, 226, 0.2);
 }
-.icon-container { font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); }
 
-.card h3 { color: #4a148c; margin-bottom: 15px; font-size: 1.6rem; font-weight: 700; }
+/* Iconos más decentes y pequeños */
+.icon-container { font-size: 2.5rem; margin-bottom: 15px; filter: drop-shadow(0 3px 3px rgba(0,0,0,0.1)); }
+
+.card h3 { color: #4a148c; margin-bottom: 15px; font-size: 1.4rem; font-weight: 700; }
+
+.puntos-clave { list-style: none; text-align: left; margin-bottom: 20px; padding: 0 5px; flex-grow: 1; /* Ocupa el espacio disponible */ }
+.puntos-clave li { margin-bottom: 10px; color: #5e35b1; font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.puntos-clave li i { color: #ab47bc; font-size: 0.8rem; }
+
+/* Información de entrega corregida */
+.delivery-info { 
+    background: #f3e5f5; color: #6a1b9a; padding: 8px 12px; border-radius: 10px; 
+    font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;
+    border: 1px solid rgba(171, 71, 188, 0.2);
+    margin-bottom: 15px;
+}
+.delivery-info.vivo { background: #fce4ec; color: #c2185b; border-color: rgba(233, 30, 99, 0.2); }
+.delivery-info i { font-size: 1rem; }
 
 .btn-info {
-    background: #fbf7ff; border: 1px solid #e1bee7; color: #7b1fa2; padding: 8px 18px;
-    border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
-    margin: 0 auto 20px; transition: 0.3s; display: inline-block;
+    background: transparent; border: 1px solid #e1bee7; color: #7b1fa2; padding: 6px 15px;
+    border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 600;
+    margin: 0 auto 15px; transition: 0.3s; display: inline-block;
 }
 .btn-info:hover { background: #f3e5f5; border-color: #ba68c8; }
 
 .info-oculta {
     display: none; background-color: #fafafa; padding: 15px; border-radius: 12px;
-    font-size: 0.9rem; color: #555; margin-bottom: 20px; border-left: 3px solid #ab47bc;
+    font-size: 0.9rem; color: #555; margin-bottom: 15px; border-left: 3px solid #ab47bc;
     text-align: left; animation: fadeIn 0.5s;
 }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
 .btn-card-action {
-    display: block; width: 100%; padding: 14px; margin-top: auto;
+    display: block; width: 100%; padding: 12px; 
     background-color: #6a1b9a; color: white; text-decoration: none;
-    border-radius: 15px; font-weight: 600; text-align: center; transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+    border-radius: 12px; font-weight: 600; text-align: center; transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(106, 27, 154, 0.2);
 }
-.btn-card-action:hover { background-color: #4a148c; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(106, 27, 154, 0.35); }
+.btn-card-action:hover { background-color: #4a148c; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(106, 27, 154, 0.3); }
 .btn-card-action.destacado { background: linear-gradient(135deg, #8e24aa, #ba68c8); }
 
-.puntos-clave { list-style: none; text-align: left; margin-bottom: 20px; padding: 0 10px; }
-.puntos-clave li { margin-bottom: 12px; color: #5e35b1; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 12px; }
-
-.delivery-info { 
-    background: #f3e5f5; color: #6a1b9a; padding: 8px; border-radius: 10px; 
-    font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;
-    border: 1px solid rgba(171, 71, 188, 0.2);
-}
-.delivery-info.vivo { background: #fce4ec; color: #c2185b; border-color: rgba(233, 30, 99, 0.2); }
-
 /* =========================================
-   FOOTER MÍSTICO
+   FOOTER MÍSTICO (Redistribuido)
    ========================================= */
 .footer-mistico {
     background: linear-gradient(to top, #0f0518, #2a0e3d); 
     color: #e0d0ff;
-    padding-top: 80px;
-    font-size: 0.95rem;
-    border-top: 1px solid rgba(171, 71, 188, 0.2);
-    margin-top: 80px;
+    padding-top: 60px;
+    margin-top: 60px;
     position: relative;
+    border-top: 1px solid rgba(171, 71, 188, 0.3);
 }
-/* Luz superior en el footer */
 .footer-mistico::before {
     content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    width: 80%; height: 1px;
+    width: 60%; height: 2px;
     background: radial-gradient(circle, #ab47bc 0%, transparent 100%);
 }
 
 .footer-container {
-    max-width: 1100px; margin: 0 auto; padding: 0 20px 40px;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; text-align: left;
+    max-width: 1100px; margin: 0 auto; padding: 0 20px 30px;
+    /* Usamos CSS Grid para separar las columnas */
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columna Izquierda (Contacto) */
+.footer-contact {
+    text-align: left;
+}
+
+/* Columna Derecha (Redes Sociales) - Alineada a la derecha */
+.footer-social {
+    justify-self: end; /* Empuja la columna al final del grid */
+    text-align: right; /* Alinea el texto interno a la derecha */
 }
 
 .footer-col h3 { 
-    font-size: 1.6rem; color: #fff; margin-bottom: 20px; 
+    font-size: 1.5rem; color: #fff; margin-bottom: 15px; 
     text-shadow: 0 0 15px rgba(171, 71, 188, 0.6); 
-    font-family: 'Georgia', serif;
 }
 
 .footer-col h4 {
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #FFF5CC !important; 
-    text-transform: none;      
     font-weight: 400;          
     font-style: italic;       
     letter-spacing: 1px;
-    margin-bottom: 25px;
-    border-bottom: 1px solid rgba(255, 245, 204, 0.2);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 245, 204, 0.3);
     display: inline-block;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
-.footer-desc { opacity: 0.8; line-height: 1.7; margin-bottom: 20px; }
+.footer-desc { opacity: 0.8; line-height: 1.6; margin-bottom: 20px; font-size: 0.9rem; }
+.contact-data p { margin-bottom: 8px; opacity: 0.9; font-size: 0.9rem; display: flex; align-items: center; }
+
+/* Redes Sociales a la derecha */
+.social-icons {
+    display: flex;
+    justify-content: flex-end; /* Alinea los iconos a la derecha */
+    gap: 10px;
+}
 
 .social-icons a {
     display: inline-flex; justify-content: center; align-items: center;
-    width: 45px; height: 45px; background: rgba(255, 255, 255, 0.05);
-    color: white; border-radius: 50%; margin-right: 12px; text-decoration: none; transition: 0.3s;
+    width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05);
+    color: white; border-radius: 50%; text-decoration: none; transition: 0.3s;
     border: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.1rem;
 }
 .social-icons a:hover { 
-    background: #ab47bc; transform: translateY(-5px); border-color: #ab47bc; 
+    background: #ab47bc; transform: translateY(-3px); border-color: #ab47bc; 
     box-shadow: 0 5px 15px rgba(171, 71, 188, 0.4);
 }
 
 .footer-bottom {
-    background-color: #05010a; padding: 25px; text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: #05010a; padding: 20px; text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;
     max-width: 1100px; margin: 0 auto;
+    font-size: 0.85rem;
 }
-.footer-bottom p { font-size: 0.85rem; margin: 5px 0; opacity: 0.6; }
+.footer-bottom p { margin: 5px 0; opacity: 0.6; }
 .developer i { color: #ffd700; font-size: 0.8rem; }
 
 .agusunx {
@@ -298,9 +329,26 @@ h2::after { content: ''; display: block; width: 50px; height: 4px; background: #
 }
 .agusunx:hover { text-shadow: 0 0 10px rgba(171, 71, 188, 0.8); opacity: 1; }
 
+/* =========================================
+   RESPONSIVE (Móvil)
+   ========================================= */
 @media (max-width: 768px) {
-    .hero .titulo-mistico { font-size: 3rem; } /* Título adaptable */
-    .footer-container { text-align: center; }
+    .hero .titulo-mistico { font-size: 3rem; }
+    .hero { padding-top: 100px; }
+    
+    /* En móvil, el footer vuelve a ser una sola columna centrada */
+    .footer-container { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 30px;
+    }
+    .footer-contact, .footer-social {
+        justify-self: center;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    
     .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; }
-    .social-icons { justify-content: center; display: flex; }
 }
