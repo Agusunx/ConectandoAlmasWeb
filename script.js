@@ -1,26 +1,32 @@
-// Función para mostrar/ocultar la info educativa
-function toggleInfo(id) {
-    var infoDiv = document.getElementById(id);
-    
-    if (infoDiv.style.display === "block") {
-        infoDiv.style.display = "none";
-    } else {
-        infoDiv.style.display = "block";
-    }
-}
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Efecto Scroll Reveal (Aparecer al bajar)
+    const cards = document.querySelectorAll('.reveal');
 
-// Animación de carga inicial
-window.addEventListener('load', () => {
-    console.log("Web de Conectando Almas lista.");
-    const titulo = document.querySelector('h1');
-    if(titulo) {
-        titulo.style.opacity = '0';
-        titulo.style.transform = 'translateY(20px)';
-        titulo.style.transition = 'opacity 1s ease, transform 1s ease';
-        
-        setTimeout(() => {
-            titulo.style.opacity = '1';
-            titulo.style.transform = 'translateY(0)';
-        }, 300);
-    }
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+
+        cards.forEach((card) => {
+            const elementTop = card.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                card.classList.add("visible");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    // Ejecutar una vez al inicio para ver las primeras
+    revealOnScroll();
+
+    // 2. Navbar cambia de color al bajar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = "rgba(10, 5, 20, 0.95)";
+            navbar.style.padding = "10px 5%";
+        } else {
+            navbar.style.background = "rgba(10, 5, 20, 0.85)";
+            navbar.style.padding = "15px 5%";
+        }
+    });
 });
