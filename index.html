@@ -1,130 +1,124 @@
-<header class="hero" id="inicio">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectando Almas | Guía Espiritual</title>
     
-    <video autoplay muted loop playsinline class="video-background" poster="fondo2.jpg">
-        <source src="fondo-animado.mp4" type="video/mp4">
-        Tu navegador no soporta videos HTML5.
-    </video>
-    <div class="hero-content">
-        <h1 class="titulo-mistico">Conectando Almas</h1>
-        <p class="subtitle">Guía Espiritual & Mediumnidad</p>
-        <p class="phrase">"Donde lo invisible se hace presente y el alma encuentra su voz."</p>
-        
-        <div class="botones-hero">
-             <a href="#" class="btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> Enviar WhatsApp
-            </a>
-            <a href="#" class="btn-instagram" target="_blank">
-                <i class="fab fa-instagram"></i> Ver Instagram
-            </a>
-        </div>
-    </div>
-</header>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-    <section id="bienvenida">
-        <h2>Espacio Sagrado</h2>
-        <p class="intro-text">
-            Bienvenid@ a este refugio para el alma. Acá, el velo entre los mundos se levanta para traerte las respuestas que necesitás.<br><br>
-            Mi misión es abrazar tu energía para que puedas <strong>sanar, soltar y seguir tu camino</strong> con el corazón más liviano.
-        </p>
+    <nav class="navbar" id="navbar">
+        <div class="logo">Conectando Almas</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="nav-social">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="titulo-mistico">Conectando Almas</h1>
+            <p class="subtitle">Guía Espiritual & Mediumnidad</p>
+            <p class="phrase">"Donde lo invisible se hace presente y el alma encuentra su voz."</p>
+            
+            <div class="botones-hero">
+                <a href="https://wa.me/549XXXXXXXXXX" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                </a>
+                <a href="https://instagram.com/TU_USUARIO" class="btn-instagram" target="_blank">
+                    <i class="fab fa-instagram"></i> Ver Instagram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios">
+        <h2 class="titulo-seccion">Mis Servicios Sagrados</h2>
+        
+        <div class="servicios-grid">
+            <div class="card reveal">
+                <div class="icon-container">🕯️</div>
+                <h3>Mediumnidad y Conexiones</h3>
+                <ul class="puntos-clave">
+                    <li><i class="fas fa-star"></i> Canalización de mensajes</li>
+                    <li><i class="fas fa-star"></i> Fotomancia (Lectura de fotos)</li>
+                    <li><i class="fas fa-star"></i> Conexión con seres queridos</li>
+                </ul>
+                <div class="delivery-info vivo">
+                    <i class="fas fa-video"></i> Videollamada / Online
+                </div>
+                <a href="#" class="btn-card-action destacado">Agendar Sesión</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="icon-container">🌙</div>
+                <h3>Tarot Terapéutico</h3>
+                <ul class="puntos-clave">
+                    <li><i class="fas fa-star"></i> Guía y claridad mental</li>
+                    <li><i class="fas fa-star"></i> Análisis de vínculos</li>
+                    <li><i class="fas fa-star"></i> Autoconocimiento profundo</li>
+                </ul>
+                <div class="delivery-info">
+                    <i class="fab fa-whatsapp"></i> Entrega por Audio/PDF
+                </div>
+                <a href="#" class="btn-card-action">Pedir Lectura</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="icon-container">✨</div>
+                <h3>Sanación Energética</h3>
+                <ul class="puntos-clave">
+                    <li><i class="fas fa-star"></i> Limpieza de aura</li>
+                    <li><i class="fas fa-star"></i> Desbloqueo de chakras</li>
+                    <li><i class="fas fa-star"></i> Armonización integral</li>
+                </ul>
+                <div class="delivery-info">
+                    <i class="fas fa-magic"></i> Sesión a distancia
+                </div>
+                <a href="#" class="btn-card-action">Solicitar Sanación</a>
+            </div>
+        </div>
     </section>
 
-  <section id="servicios">
-    <h2 class="titulo-seccion">Nuestros Servicios Sagrados</h2>
-    <div class="servicios-grid">
-        <div class="card">
-            <div class="icon-container">🌙</div>
-            <h3>Tarot Terapéutico</h3>
-            <ul class="puntos-clave">
-                <li><i class="fas fa-star"></i> Lectura profunda de energías</li>
-                <li><i class="fas fa-star"></i> Orientación y claridad</li>
-                <li><i class="fas fa-star"></i> Sanación emocional</li>
-            </ul>
-            <div class="delivery-info">
-                <i class="fab fa-whatsapp"></i> Entrega por audio de WhatsApp
-            </div>
-            <button class="btn-info" onclick="toggleInfo(this)">Ver más detalles</button>
-            <div class="info-oculta">
-                Sesiones personalizadas para explorar tu mundo interior y encontrar respuestas a tus inquietudes más profundas.
-            </div>
-            <button class="btn-card-action">Reservar Sesión</button>
-        </div>
-
-        <div class="card">
-            <div class="icon-container">🕊️</div>
-            <h3>Mediumnidad y Conexiones</h3>
-            <ul class="puntos-clave">
-                <li><i class="fas fa-star"></i> Mensajes de seres queridos</li>
-                <li><i class="fas fa-star"></i> Fotomancia (lectura de fotos)</li>
-                <li><i class="fas fa-star"></i> Conexión espiritual</li>
-            </ul>
-            <div class="delivery-info vivo">
-                <i class="fas fa-video"></i> Sesión en vivo por videollamada
-            </div>
-            <button class="btn-info" onclick="toggleInfo(this)">Ver más detalles</button>
-            <div class="info-oculta">
-                Un puente de amor para conectar con quienes ya no están en el plano físico, a través de mensajes y lectura de fotografías.
-            </div>
-            <button class="btn-card-action destacado">Agendar Conexión</button>
-        </div>
-
-        <div class="card">
-            <div class="icon-container">✨</div>
-            <h3>Sanación Energética</h3>
-            <ul class="puntos-clave">
-                <li><i class="fas fa-star"></i> Limpieza de aura y chakras</li>
-                <li><i class="fas fa-star"></i> Desbloqueo energético</li>
-                <li><i class="fas fa-star"></i> Elevación de vibración</li>
-            </ul>
-            <div class="delivery-info">
-                <i class="fas fa-spa"></i> Sesión a distancia
-            </div>
-            <button class="btn-info" onclick="toggleInfo(this)">Ver más detalles</button>
-            <div class="info-oculta">
-                Restaura tu equilibrio natural y libera cargas negativas para fluir con mayor armonía y bienestar.
-            </div>
-            <button class="btn-card-action">Solicitar Sanación</button>
-        </div>
-    </div>
-</section>
-    <footer class="footer-mistico">
+    <footer class="footer-mistico" id="contacto">
         <div class="footer-container">
-            <div class="footer-col">
+            <div class="footer-left">
                 <h3>Conectando Almas</h3>
-                <p class="footer-desc">Espacio de luz y sanación. Permítete escuchar lo que el universo tiene para decirte.</p>
+                <h4>Guía Espiritual</h4>
+                <p>Un espacio sagrado para tu evolución y paz interior.</p>
             </div>
-       <footer class="footer-mistico">
-    <div class="footer-container">
-        <div class="footer-col footer-contact">
-            <h3>Conectando Almas</h3>
-            <h4>Guía y Sanación Espiritual</h4>
-            <p class="footer-desc">
-                Un espacio sagrado para tu crecimiento interior. Te acompañamos en tu camino hacia la luz y la consciencia.
-            </p>
-            <div class="contact-data">
-                 <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color:#ffd700;"></i> Buenos Aires, Argentina</p>
-            </div>
-        </div>
 
-        <div class="footer-col footer-social">
-            <h3>Seguinos</h3>
-            <div class="social-icons">
-                <a href="https://instagram.com/TU_USUARIO" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/TU_USUARIO" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <div class="footer-right">
+                <h3>Seguinos</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
+            </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2024 Conectando Almas. Todos los derechos reservados.</p>
-        <p class="developer">Diseñado con <i class="fas fa-heart"></i> por <span class="agusunx">Agusunx</span></p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Conectando Almas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
 
