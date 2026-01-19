@@ -49,41 +49,52 @@ h1, h2, h3 { font-family: 'Cinzel', serif; }
 /* =========================================
    HERO SECTION (Portada con Video)
    ========================================= */
+/* =========================================
+   HERO SECTION (Portada con Video Fijo)
+   ========================================= */
 .hero { 
-    height: 100vh;
+    position: relative; /* Necesario para contener los elementos absolutos */
+    height: 100vh;      /* Ocupa toda la altura de la pantalla */
     display: flex; 
     align-items: center; 
     justify-content: center; 
     text-align: center; 
-    position: relative;
-    background-color: #1a0b2e; /* Color de fondo mientras carga el video */
-    overflow: hidden;
+    background-color: #1a0b2e; /* Color de fondo mientras carga */
+    overflow: hidden;   /* Corta cualquier sobrante del video */
+    padding: 0 20px;
 }
 
-/* Estilos para el VIDEO DE FONDO */
+/* ESTILOS PARA EL VIDEO DE FONDO (La magia para que no rompa nada) */
 .video-bg {
-    position: absolute;
+    position: absolute; /* Lo saca del flujo normal para ponerlo atrás */
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0; /* Nivel más bajo, al fondo */
-    transform: translateX(-50%) translateY(-50%); /* Centrado perfecto */
-    object-fit: cover; /* Clave: hace que el video cubra todo el espacio sin estirarse raro */
+    z-index: -1; /* Se va al fondo de todo */
+    object-fit: cover; /* CLAVE: Hace que el video cubra todo sin deformarse, igual que una imagen de fondo */
 }
 
-/* Capa oscura (Overlay) - Va encima del video */
+/* Capa oscura (Overlay) para leer el texto */
 .hero-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    /* Ajustá la oscuridad aquí si el video es muy claro o muy oscuro */
-    background: linear-gradient(to bottom, rgba(20,5,30,0.5), rgba(10,5,20,0.8));
-    z-index: 1;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Degradado para que se parezca a tu imagen de referencia */
+    background: linear-gradient(to bottom, rgba(20,5,30,0.4), rgba(10,5,20,0.8));
+    z-index: 0; /* Entre el video y el texto */
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+/* El contenido (Texto y botones) */
+.hero-content { 
+    position: relative; 
+    z-index: 1; /* Al frente de todo */
+    max-width: 800px; 
+}
 
+/* --- Estilos de Texto y Botones (Igual que antes) --- */
 .titulo-mistico {
     font-size: 4rem; margin-bottom: 10px; 
     color: #fff; text-shadow: 0 0 20px rgba(171, 71, 188, 0.8);
@@ -95,43 +106,21 @@ h1, h2, h3 { font-family: 'Cinzel', serif; }
 .phrase { 
     font-style: italic; color: #eee; font-size: 1.1rem; margin-bottom: 40px; 
 }
-.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
 
-.titulo-mistico {
-    font-size: 4rem; margin-bottom: 10px; 
-    color: #fff; text-shadow: 0 0 20px rgba(171, 71, 188, 0.8);
-    font-weight: 700;
-}
-.subtitle { 
-    font-size: 1.2rem; color: #ffd700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; 
-}
-.phrase { 
-    font-style: italic; color: #eee; font-size: 1.1rem; margin-bottom: 40px; 
-}
-
-/* BOTONES HERO */
-.botones-hero { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-
+/* Botones */
+.botones-hero { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 .btn-whatsapp { 
-    background-color: #00695c; /* Verde sólido legible */
-    color: white; padding: 14px 30px; border-radius: 50px; 
+    background-color: #00695c; color: white; padding: 14px 30px; border-radius: 50px; 
     text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.3); transition: 0.3s;
 }
 .btn-whatsapp:hover { background-color: #004d40; transform: translateY(-3px); }
-
 .btn-instagram { 
-    background-color: rgba(255, 255, 255, 0.1); 
-    color: white; padding: 14px 30px; border-radius: 50px; 
+    background-color: rgba(255, 255, 255, 0.1); color: white; padding: 14px 30px; border-radius: 50px; 
     text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(5px); transition: 0.3s;
 }
 .btn-instagram:hover { background-color: #C13584; border-color: transparent; transform: translateY(-3px); }
-
 /* =========================================
    SECCIONES Y CARDS
    ========================================= */
@@ -222,4 +211,5 @@ section { padding: 80px 20px; max-width: 1000px; margin: auto; text-align: cente
     .footer-left, .footer-right { text-align: center; width: 100%; }
     .social-icons { justify-content: center; }
 }
+
 
