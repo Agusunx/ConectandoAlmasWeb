@@ -9,9 +9,14 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR MÍSTICO (Efecto Cristal) --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    /* Fondo violeta oscuro semi-transparente */
+    background: rgba(20, 5, 30, 0.85); 
+    /* Efecto de desenfoque estilo Apple/Windows 11 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -20,7 +25,72 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
+    /* Borde inferior brillante sutil */
+    border-bottom: 1px solid rgba(171, 71, 188, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* LOGO BRILLANTE */
+.logo { 
+    font-family: 'Georgia', serif; /* Toque clásico y serio */
+    font-weight: bold; 
+    font-size: 1.5rem; 
+    color: #fff;
+    text-shadow: 0 0 15px rgba(171, 71, 188, 0.9); /* Resplandor violeta */
+    letter-spacing: 1px;
+}
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+
+/* ENLACES (LINKS) */
+.nav-links a { 
+    text-decoration: none; 
+    color: #e0d0ff; /* Lila muy clarito (casi blanco) */
+    font-weight: 500; 
+    font-size: 1.05rem;
+    position: relative;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    padding: 5px 0;
+}
+
+/* Efecto Mágico al pasar el mouse (Línea que se expande) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffd700; /* Dorado brillante */
+    transition: width 0.3s ease, left 0.3s ease;
+    box-shadow: 0 0 10px #ffd700; /* La línea brilla */
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Texto se ilumina */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* REDES SOCIALES EN EL MENÚ */
+.nav-social a { 
+    margin-left: 15px; 
+    color: #e0d0ff; 
+    font-size: 1.3rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+}
+
+.nav-social a:hover { 
+    color: #ffd700; /* Dorado */
+    transform: scale(1.2) rotate(5deg); 
+    text-shadow: 0 0 15px #ffd700;
 }
 .logo { font-weight: bold; color: #4a148c; font-size: 1.2rem; }
 .nav-links { display: flex; list-style: none; gap: 20px; }
@@ -204,6 +274,7 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
+
 
 
 
