@@ -96,7 +96,7 @@ body {
 /* --- HERO SECTION --- */
 .hero { 
     min-height: 90vh; 
-    background-image: url('fondo.png'); /* Asegurate de usar el nombre correcto de tu imagen */
+    background-image: url('fondo2.png'); /* Asegurate de usar el nombre correcto de tu imagen */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -279,3 +279,4 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
+
