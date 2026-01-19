@@ -1,0 +1,217 @@
+/* --- RESET BÁSICO --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #fbf7ff; 
+    scroll-behavior: smooth; 
+}
+
+/* --- HERO SECTION (FONDO PROPIO + DEGRADADO VIOLETA) --- */
+.hero { 
+    min-height: 90vh; 
+    /* Acá se usa tu imagen 'fondo.png'. Asegurate que esté en la misma carpeta */
+    background-image:  url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 200px;
+    color: white; 
+}
+
+/* TÍTULO DESTACADO */
+.titulo-mistico {
+    font-size: 4rem; 
+    margin-bottom: 15px; 
+    background: linear-gradient(to right, #fffef8, #fff, #eeeeee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:hsl(from color h s l);
+    text-shadow:#333;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.subtitle { 
+    font-size: 1.2rem; color: #c5bcca; text-transform: uppercase; 
+    letter-spacing: 2px; margin-bottom: 20px; font-weight: 600; 
+}
+.phrase { font-style: italic; opacity: 0.9; font-size: 1.1rem; margin-bottom: 30px; }
+
+/* Botones Hero */
+.botones-hero { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.btn-whatsapp, .btn-instagram {
+    padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
+}
+.btn-whatsapp { background-color: #25d366; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+.btn-whatsapp:hover { transform: translateY(-3px); background-color: #128c7e; }
+.btn-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); box-shadow: 0 5px 15px rgba(214, 36, 159, 0.3); }
+.btn-instagram:hover { transform: translateY(-3px); opacity: 0.95; }
+
+/* --- SECCIONES --- */
+section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: center; }
+h2 { color: #4a148c; font-size: 2.5rem; margin-bottom: 50px; position: relative; display: inline-block; }
+h2::after { content: ''; display: block; width: 60%; height: 3px; background: #ab47bc; margin: 10px auto 0; border-radius: 2px; }
+
+/* --- CARDS --- */
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { 
+    background: white; padding: 30px; border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(74, 20, 140, 0.08); 
+    border: 1px solid rgba(138, 43, 226, 0.1); 
+    display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; 
+}
+.card:hover { transform: translateY(-10px); }
+.icon-container { font-size: 3rem; margin-bottom: 10px; }
+.card h3 { color: #6a1b9a; margin-bottom: 10px; font-size: 1.5rem; }
+
+/* --- BOTÓN EDUCATIVO --- */
+.btn-info {
+    background: none; border: 2px solid #dcbbf9; color: #6a1b9a; padding: 8px 15px;
+    border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: bold;
+    margin: 10px auto 15px; transition: 0.3s; display: inline-block; width: fit-content;
+}
+.btn-info:hover { background: #f3e5f5; }
+
+/* INFO OCULTA */
+.info-oculta {
+    display: none; background-color: #fcf9ff; padding: 15px; border-radius: 10px;
+    font-size: 0.9rem; color: #555; margin-bottom: 15px; border-left: 3px solid #ab47bc;
+    text-align: left; animation: fadeIn 0.5s;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- BOTÓN DE ACCIÓN --- */
+.btn-card-action {
+    display: block; width: 100%; padding: 12px; margin-top: 20px;
+    background-color: #6a1b9a; color: white; text-decoration: none;
+    border-radius: 10px; font-weight: bold; text-align: center; transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(106, 27, 154, 0.2);
+}
+.btn-card-action:hover { background-color: #4a148c; transform: scale(1.02); }
+.btn-card-action.destacado { background: linear-gradient(45deg, #7b1fa2, #ab47bc); }
+
+/* Listas y otros */
+.puntos-clave { list-style: none; text-align: left; margin-bottom: 15px; padding: 0 10px; }
+.puntos-clave li { margin-bottom: 8px; color: #4a148c; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.delivery-info { background: #4a148c; color: white; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.delivery-
+/* --- FOOTER MÍSTICO PREMIUM --- */
+.footer-mistico {
+    background: linear-gradient(to bottom, #200a2e, #11031a); /* Degradado oscuro profundo */
+    color: #e0d0ff;
+    padding-top: 60px;
+    font-size: 0.95rem;
+    border-top: 4px solid #ab47bc; /* Borde superior violeta brillante */
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas */
+    gap: 40px;
+    text-align: left;
+}
+
+/* Títulos del Footer */
+.footer-col h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    color: #ffd700; /* Dorado para subtítulos */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-desc {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Iconos Sociales Redondos */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #ab47bc;
+    transform: translateY(-3px);
+}
+
+/* Enlaces (Links) */
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+    color: #e0d0ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-col ul li a:hover { color: #ffd700; padding-left: 5px; } /* Efecto movimiento */
+
+.disclaimer { font-size: 0.8rem; opacity: 0.5; margin-top: 15px; }
+
+/* --- BARRA INFERIOR (Copyright + Agusunx) --- */
+.footer-bottom {
+    background-color: #0b0211; /* Casi negro */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-bottom p { font-size: 0.85rem; margin: 5px 0; opacity: 0.7; }
+
+/* TU FIRMA (Agusunx) */
+.developer i { color: #ffd700; font-size: 0.8rem; } /* El rayito */
+.agusunx {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background: linear-gradient(to right, #ab47bc, #ffd700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto degradado */
+    transition: 0.3s;
+}
+
+.agusunx:hover {
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.8);
+    opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-container { text-align: center; }
+    .footer-bottom { flex-direction: column; justify-content: center; }
+    .social-icons { justify-content: center; display: flex; }
+}
