@@ -142,12 +142,17 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left;
 }
 .footer-col h3 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; text-shadow: 0 0 10px rgba(171, 71, 188, 0.5); }
-.footer-col h4 { 
-    font-family: 'Georgia', serif; /* Cambia a una letra con "patitas" (serif) */
-    font-style: italic;            /* La pone en cursiva */
-    font-size: 1.1rem; 
-    color: #FFF5CC; 
-    margin-bottom: 20px; 
+.footer-col h4 {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Letra clásica y mística */
+    font-size: 1.2rem;
+    color: #FFF5CC !important;  /* Color Champagne forzado */
+    margin-bottom: 25px;
+    letter-spacing: 2px;        /* Separa las letras para elegancia */
+    text-transform: uppercase;  /* Lo pone todo en mayúsculas */
+    border-bottom: 1px solid rgba(255, 245, 204, 0.3); /* Línea sutil debajo */
+    padding-bottom: 5px;
+    display: inline-block;      /* Necesario para que la línea se ajuste al texto */
+}
 }
 }
     
@@ -183,6 +188,7 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
+
 
 
 
