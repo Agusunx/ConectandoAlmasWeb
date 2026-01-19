@@ -73,8 +73,17 @@ body {
 .btn-whatsapp, .btn-instagram {
     padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
 }
-.btn-whatsapp { background-color: #25d366; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
-.btn-whatsapp:hover { transform: translateY(-3px); background-color: #128c7e; }
+/* Botón WhatsApp - Verde más oscuro para mejor lectura */
+.btn-whatsapp { 
+    background-color: #128C7E; /* Verde más profundo (Teal) */
+    box-shadow: 0 5px 15px rgba(18, 140, 126, 0.4); 
+    padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
+}
+
+.btn-whatsapp:hover { 
+    transform: translateY(-3px); 
+    background-color: #075E54; /* Hover casi negro/verde */
+}
 .btn-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); box-shadow: 0 5px 15px rgba(214, 36, 159, 0.3); }
 .btn-instagram:hover { transform: translateY(-3px); opacity: 0.95; }
 
@@ -195,6 +204,7 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
+
 
 
 
