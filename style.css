@@ -143,12 +143,12 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
 }
 .footer-col h3 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; text-shadow: 0 0 10px rgba(171, 71, 188, 0.5); }
 .footer-col h4 { 
-    font-family: 'Cinzel', serif;  /* NUEVA LÍNEA */
-    font-size: 1.2rem;             /* Aumenté un poco el tamaño para que luzca */
-    color: #FFF5CC;                /* El color champagne que elegimos antes */
+    font-family: 'Georgia', serif; /* Cambia a una letra con "patitas" (serif) */
+    font-style: italic;            /* La pone en cursiva */
+    font-size: 1.1rem; 
+    color: #FFF5CC; 
     margin-bottom: 20px; 
- 
-    letter-spacing: 2px;           /* Separa las letras para más elegancia */
+}
 }
     
 }
@@ -183,5 +183,6 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
+
 
 
