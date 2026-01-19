@@ -12,8 +12,8 @@ body {
 /* --- NAVBAR MÍSTICO (Efecto Cristal) --- */
 .navbar {
     /* Fondo violeta oscuro semi-transparente */
-    background: rgba(20, 5, 30, 0.85); 
-    /* Efecto de desenfoque estilo Apple/Windows 11 */
+    background: rgba(20, 5, 30, 0.9); 
+    /* Efecto de desenfoque */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     
@@ -34,7 +34,7 @@ body {
 
 /* LOGO BRILLANTE */
 .logo { 
-    font-family: 'Georgia', serif; /* Toque clásico y serio */
+    font-family: 'Georgia', serif; 
     font-weight: bold; 
     font-size: 1.5rem; 
     color: #fff;
@@ -84,7 +84,7 @@ body {
     margin-left: 15px; 
     color: #e0d0ff; 
     font-size: 1.3rem;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .nav-social a:hover { 
@@ -92,15 +92,11 @@ body {
     transform: scale(1.2) rotate(5deg); 
     text-shadow: 0 0 15px #ffd700;
 }
-.logo { font-weight: bold; color: #4a148c; font-size: 1.2rem; }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
-.nav-social a { margin-left: 10px; color: #4a148c; font-size: 1.2rem; }
 
 /* --- HERO SECTION --- */
 .hero { 
     min-height: 90vh; 
-    background-image: url('fondo2.png'); /* Asegurate de que fondo.png esté en la carpeta */
+    background-image: url('fondo.png'); /* Asegurate de usar el nombre correcto de tu imagen */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -111,7 +107,7 @@ body {
     padding: 150px 20px 100px;
     color: white; 
     position: relative;
-    background-color: #2c0e3a; /* Color de respaldo */
+    background-color: #2c0e3a; 
 }
 .hero::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -140,21 +136,32 @@ body {
 
 /* Botones Hero */
 .botones-hero { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-.btn-whatsapp, .btn-instagram {
-    padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
-}
-/* Botón WhatsApp - Verde más oscuro para mejor lectura */
+
+/* Botón WhatsApp - Verde MUY oscuro para contraste perfecto */
 .btn-whatsapp { 
-    background-color: #128C7E; /* Verde más profundo (Teal) */
-    box-shadow: 0 5px 15px rgba(18, 140, 126, 0.4); 
-    padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
+    background-color: #0A5C50; /* Verde Esmeralda Profundo */
+    box-shadow: 0 5px 15px rgba(10, 92, 80, 0.4); 
+    padding: 14px 28px; 
+    text-decoration: none; 
+    border-radius: 50px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    color: #ffffff; /* Texto blanco puro */
 }
 
 .btn-whatsapp:hover { 
     transform: translateY(-3px); 
-    background-color: #075E54; /* Hover casi negro/verde */
+    background-color: #064037; /* Aún más oscuro al pasar el mouse */
 }
-.btn-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); box-shadow: 0 5px 15px rgba(214, 36, 159, 0.3); }
+
+.btn-instagram { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); 
+    box-shadow: 0 5px 15px rgba(214, 36, 159, 0.3); 
+    padding: 14px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px; color: white;
+}
 .btn-instagram:hover { transform: translateY(-3px); opacity: 0.95; }
 
 /* --- SECCIONES --- */
@@ -241,8 +248,6 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     padding-bottom: 5px;
 }
 
-/* Se eliminaron las llaves '}' extra que sobraban aquí */
-
 .footer-desc { opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
 
 .social-icons a {
@@ -274,12 +279,3 @@ h2::after { content: ''; display: block; width: 60%; height: 3px; background: #a
     .footer-bottom { flex-direction: column; justify-content: center; }
     .social-icons { justify-content: center; display: flex; }
 }
-
-
-
-
-
-
-
-
-
