@@ -82,7 +82,7 @@ h1, h2, h3, .logo, .titulo-mistico {
    ========================================= */
 .hero { 
     min-height: 100vh;
-    background-image: url('fondo2.jpg'); /* Asegurate que este sea el nombre correcto */
+    background-image: url('fondo3.png'); /* Asegurate que este sea el nombre correcto */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -352,3 +352,4 @@ section {
     
     .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; }
 }
+
