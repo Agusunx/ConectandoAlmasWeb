@@ -1,0 +1,306 @@
+/* --- RESET BÁSICO --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #fbf7ff; 
+    scroll-behavior: smooth; 
+}
+
+/* =========================================
+   NAVBAR PREMIUM (Efecto Vidrio Esmerilado)
+   ========================================= */
+.navbar {
+    background: rgba(15, 5, 30, 0.7); /* Más transparente para que luzca el fondo */
+    backdrop-filter: blur(20px);      /* Desenfoque potente (estilo iPhone) */
+    -webkit-backdrop-filter: blur(20px);
+    
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    
+    /* Borde fino brillante */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logo { 
+    font-family: 'Georgia', serif; 
+    font-weight: bold; 
+    font-size: 1.6rem; 
+    color: #fff;
+    /* Doble sombra para efecto neón */
+    text-shadow: 0 0 10px rgba(171, 71, 188, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #e0d0ff; 
+    font-weight: 500; 
+    font-size: 0.95rem;
+    position: relative;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 50%;
+    background-color: #ffd700; transition: width 0.3s ease, left 0.3s ease;
+    box-shadow: 0 0 8px #ffd700;
+}
+
+.nav-links a:hover { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+.nav-links a:hover::after { width: 100%; left: 0; }
+
+.nav-social a { 
+    margin-left: 15px; color: #e0d0ff; font-size: 1.2rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.nav-social a:hover { 
+    color: #ffd700; transform: scale(1.2) rotate(5deg); text-shadow: 0 0 15px #ffd700;
+}
+
+/* =========================================
+   HERO SECTION (Portada Estética)
+   ========================================= */
+.hero { 
+    min-height: 100vh; /* Pantalla completa */
+    
+    /* CAMBIO CLAVE: Referencia exacta al archivo de tu imagen */
+    background-image: url('fondo4.png'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax elegante */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 150px 20px 100px;
+    color: white; 
+    position: relative;
+    background-color: #1a0b2e; 
+}
+
+/* Overlay Degradado: Hace que el texto se lea perfecto sobre cualquier foto */
+.hero::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(20,5,30,0.6) 0%, rgba(32,10,46,0.3) 50%, #fbf7ff 100%);
+    z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+/* TÍTULO PRINCIPAL DE LUJO */
+.titulo-mistico {
+    font-size: 5rem; 
+    margin-bottom: 10px; 
+    /* Texto con degradado metálico */
+    background: linear-gradient(to bottom right, #ffffff, #f3e5f5, #dcbbf9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    /* Sombra profunda */
+    filter: drop-shadow(0 4px 15px rgba(100, 30, 120, 0.5));
+    letter-spacing: -1px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.subtitle { 
+    font-size: 1.3rem; color: #e0d0ff; text-transform: uppercase; 
+    letter-spacing: 3px; margin-bottom: 30px; font-weight: 600; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+.phrase { 
+    font-family: 'Georgia', serif; font-style: italic; 
+    opacity: 0.95; font-size: 1.3rem; margin-bottom: 45px; color: #fff; 
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* BOTONES HERO */
+.botones-hero { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+.btn-whatsapp { 
+    background-color: #128C7E; /* Verde Teal Elegante */
+    box-shadow: 0 10px 25px rgba(18, 140, 126, 0.4); 
+    padding: 16px 35px; 
+    text-decoration: none; border-radius: 50px; font-weight: bold; 
+    transition: all 0.3s ease; 
+    display: flex; align-items: center; gap: 10px; color: #ffffff; 
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 1.1rem;
+}
+.btn-whatsapp:hover { 
+    transform: translateY(-5px); 
+    background-color: #0E6B5E; 
+    box-shadow: 0 15px 30px rgba(18, 140, 126, 0.6);
+}
+
+.btn-instagram { 
+    background: rgba(255, 255, 255, 0.1); /* Cristal */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 16px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; 
+    transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; color: white;
+    font-size: 1.1rem;
+}
+.btn-instagram:hover { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    border-color: transparent;
+    transform: translateY(-5px); 
+}
+
+/* =========================================
+   SECCIONES Y CARDS FLOTANTES
+   ========================================= */
+section { padding: 100px 20px; max-width: 1100px; margin: auto; text-align: center; }
+h2 { 
+    color: #2c0e3a; font-size: 3rem; margin-bottom: 60px; position: relative; display: inline-block; 
+    font-weight: 700; letter-spacing: -1px;
+}
+h2::after { content: ''; display: block; width: 50px; height: 4px; background: #ab47bc; margin: 15px auto 0; border-radius: 10px; }
+
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+
+.card { 
+    background: #fff; padding: 40px 30px; border-radius: 30px; 
+    /* Sombra suave y difusa (moderna) */
+    box-shadow: 0 20px 40px rgba(150, 150, 200, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 1);
+    display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    position: relative; overflow: hidden;
+}
+.card:hover { 
+    transform: translateY(-15px); 
+    box-shadow: 0 30px 60px rgba(138, 43, 226, 0.2);
+}
+.icon-container { font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); }
+
+.card h3 { color: #4a148c; margin-bottom: 15px; font-size: 1.6rem; font-weight: 700; }
+
+.btn-info {
+    background: #fbf7ff; border: 1px solid #e1bee7; color: #7b1fa2; padding: 8px 18px;
+    border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
+    margin: 0 auto 20px; transition: 0.3s; display: inline-block;
+}
+.btn-info:hover { background: #f3e5f5; border-color: #ba68c8; }
+
+.info-oculta {
+    display: none; background-color: #fafafa; padding: 15px; border-radius: 12px;
+    font-size: 0.9rem; color: #555; margin-bottom: 20px; border-left: 3px solid #ab47bc;
+    text-align: left; animation: fadeIn 0.5s;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+.btn-card-action {
+    display: block; width: 100%; padding: 14px; margin-top: auto;
+    background-color: #6a1b9a; color: white; text-decoration: none;
+    border-radius: 15px; font-weight: 600; text-align: center; transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+}
+.btn-card-action:hover { background-color: #4a148c; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(106, 27, 154, 0.35); }
+.btn-card-action.destacado { background: linear-gradient(135deg, #8e24aa, #ba68c8); }
+
+.puntos-clave { list-style: none; text-align: left; margin-bottom: 20px; padding: 0 10px; }
+.puntos-clave li { margin-bottom: 12px; color: #5e35b1; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 12px; }
+
+.delivery-info { 
+    background: #f3e5f5; color: #6a1b9a; padding: 8px; border-radius: 10px; 
+    font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;
+    border: 1px solid rgba(171, 71, 188, 0.2);
+}
+.delivery-info.vivo { background: #fce4ec; color: #c2185b; border-color: rgba(233, 30, 99, 0.2); }
+
+/* =========================================
+   FOOTER MÍSTICO
+   ========================================= */
+.footer-mistico {
+    background: linear-gradient(to top, #0f0518, #2a0e3d); 
+    color: #e0d0ff;
+    padding-top: 80px;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(171, 71, 188, 0.2);
+    margin-top: 80px;
+    position: relative;
+}
+/* Luz superior en el footer */
+.footer-mistico::before {
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 80%; height: 1px;
+    background: radial-gradient(circle, #ab47bc 0%, transparent 100%);
+}
+
+.footer-container {
+    max-width: 1100px; margin: 0 auto; padding: 0 20px 40px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; text-align: left;
+}
+
+.footer-col h3 { 
+    font-size: 1.6rem; color: #fff; margin-bottom: 20px; 
+    text-shadow: 0 0 15px rgba(171, 71, 188, 0.6); 
+    font-family: 'Georgia', serif;
+}
+
+.footer-col h4 {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #FFF5CC !important; 
+    text-transform: none;      
+    font-weight: 400;          
+    font-style: italic;       
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 245, 204, 0.2);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.footer-desc { opacity: 0.8; line-height: 1.7; margin-bottom: 20px; }
+
+.social-icons a {
+    display: inline-flex; justify-content: center; align-items: center;
+    width: 45px; height: 45px; background: rgba(255, 255, 255, 0.05);
+    color: white; border-radius: 50%; margin-right: 12px; text-decoration: none; transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.social-icons a:hover { 
+    background: #ab47bc; transform: translateY(-5px); border-color: #ab47bc; 
+    box-shadow: 0 5px 15px rgba(171, 71, 188, 0.4);
+}
+
+.footer-bottom {
+    background-color: #05010a; padding: 25px; text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;
+    max-width: 1100px; margin: 0 auto;
+}
+.footer-bottom p { font-size: 0.85rem; margin: 5px 0; opacity: 0.6; }
+.developer i { color: #ffd700; font-size: 0.8rem; }
+
+.agusunx {
+    color: #fff; font-weight: bold; text-decoration: none;
+    background: linear-gradient(to right, #ab47bc, #ffd700);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    transition: 0.3s;
+}
+.agusunx:hover { text-shadow: 0 0 10px rgba(171, 71, 188, 0.8); opacity: 1; }
+
+@media (max-width: 768px) {
+    .hero .titulo-mistico { font-size: 3rem; } /* Título adaptable */
+    .footer-container { text-align: center; }
+    .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; }
+    .social-icons { justify-content: center; display: flex; }
+}
