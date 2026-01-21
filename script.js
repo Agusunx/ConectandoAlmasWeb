@@ -1,7 +1,10 @@
-// Función para mostrar/ocultar la info educativa
+// ==========================================
+// 1. FUNCIONES GENERALES DE LA PÁGINA
+// ==========================================
+
+// Función para mostrar/ocultar la info educativa (Acordeón)
 function toggleInfo(id) {
     var infoDiv = document.getElementById(id);
-    
     if (infoDiv.style.display === "block") {
         infoDiv.style.display = "none";
     } else {
@@ -9,57 +12,28 @@ function toggleInfo(id) {
     }
 }
 
-// Animación de carga inicial
+// ==========================================
+// 2. ANIMACIÓN DE CARGA INICIAL
+// ==========================================
 window.addEventListener('load', () => {
-   // ... código de animación ...
-}); // <--- Primero se cierra la animación
-
-// Y ACÁ AFUERA EMPIEZA LO NUEVO
-const API_KEY = "...";
-function toggleChat() { ... }
-// --- LÓGICA DEL CHATBOT IA (Directo en navegador) ---
-
-// Tu clave expuesta (A tu riesgo)
-const API_KEY = "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"; 
-
-function toggleChat() {
-    const container = document.getElementById('chat-container');
-    container.style.display = container.style.display === 'none' ? 'flex' : 'none';
-}
-
-// --- LÓGICA DEL CHATBOT IA (Versión Vendedor) ---
-
-const API_KEY = "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"; 
-
-// AQUI DEFINIMOS LA PERSONALIDAD Y LOS DATOS DEL NEGOCIO
-// ¡Editá esto con tus precios reales!
-const INFO_DEL_NEGOCIO = `
-DATOS DE CONECTANDO ALMAS:
-- Misión: Ayudar al autoconocimiento a través de la Matriz del Destino y Numerología.
-- Servicio 1: "Lectura de Matriz Individual". Precio: $15.000 ARS. Incluye análisis de misión, karma y talentos.
-- Servicio 2: "Análisis de Vínculo (Pareja)". Precio: $20.000 ARS. Analiza compatibilidad y desafíos.
-- Servicio 3: "Revolución Solar". Precio: $18.000 ARS.
-- Medios de pago: Transferencia bancaria, Mercado Pago o PayPal (para exterior).
-- Contacto: Escribir al Instagram @ConectandoAlmas o al WhatsApp.
-
-REGLAS DE COMPORTAMIENTO:
-1. Eres un asistente de ventas y atención al cliente de 'Conectando Almas'.
-2. TU ÚNICO OBJETIVO es responder dudas sobre nuestros servicios, precios y cómo contratar.
-3. SI EL USUARIO PREGUNTA OTRA COSA (ej: capitales, matemáticas, recetas, política): Responde amablemente "Disculpa, solo estoy programado para responder dudas sobre los servicios de Conectando Almas".
-4. Sé breve, amable y usa emojis místicos (🔮, ✨, 🌙).
-`;
-
-function toggleChat() {
-    const container = document.getElementById('chat-container');
-    if (!container.style.display || container.style.display === 'none') {
-        container.style.display = 'flex';
-    } else {
-        container.style.display = 'none';
+    console.log("Web de Conectando Almas lista.");
+    const titulo = document.querySelector('h1');
+    
+    // Solo ejecutamos si existe el título para no dar error
+    if(titulo) {
+        titulo.style.opacity = '0';
+        titulo.style.transform = 'translateY(20px)';
+        titulo.style.transition = 'opacity 1s ease, transform 1s ease';
+        
+        setTimeout(() => {
+            titulo.style.opacity = '1';
+            titulo.style.transform = 'translateY(0)';
+        }, 300);
     }
-}
+});
 
 // ==========================================
-// CONFIGURACIÓN DEL CHATBOT "CONECTANDO ALMAS"
+// 3. CHATBOT INTELIGENTE (ASISTENTE DE VENTAS)
 // ==========================================
 
 const API_KEY = "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"; 
@@ -93,11 +67,16 @@ REGLAS DE COMPORTAMIENTO:
 4. Si preguntan cosas fuera del tema (política, matemática, recetas), responde amablemente que solo hablas de los servicios de Conectando Almas.
 `;
 
-// --- FUNCIONES DEL CHAT (LÓGICA) ---
-
+// Función para abrir/cerrar el chat
 function toggleChat() {
     const container = document.getElementById('chat-container');
-    // Lógica robusta para mostrar/ocultar
+    
+    // Verificación robusta para evitar errores
+    if (!container) {
+        console.error("No se encontró el elemento 'chat-container'. Revisa tu HTML.");
+        return;
+    }
+
     if (!container.style.display || container.style.display === 'none') {
         container.style.display = 'flex';
     } else {
@@ -105,11 +84,14 @@ function toggleChat() {
     }
 }
 
+// Función principal para enviar mensaje a la IA
 async function enviarMensaje() {
     const input = document.getElementById('userInput');
     const chatBox = document.getElementById('chat-box');
-    const mensaje = input.value;
+    
+    if (!input || !chatBox) return; // Protección por si no cargó el HTML
 
+    const mensaje = input.value;
     if (!mensaje) return;
 
     // 1. Mostrar mensaje del usuario
@@ -140,7 +122,7 @@ async function enviarMensaje() {
                         content: mensaje
                     }
                 ],
-                temperature: 0.4 // Temperatura ideal para ser creativo explicando pero exacto con los datos
+                temperature: 0.4
             })
         });
 
@@ -148,7 +130,8 @@ async function enviarMensaje() {
         const respuestaIA = data.choices[0].message.content;
 
         // 3. Mostrar respuesta
-        document.getElementById(loadingId).remove();
+        const loader = document.getElementById(loadingId);
+        if (loader) loader.remove();
         
         // Convertimos enlaces a clicables
         const respuestaFormateada = respuestaIA.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: #6a0dad; font-weight: bold; text-decoration: none;">Ver en Instagram ↗</a>');
@@ -156,31 +139,18 @@ async function enviarMensaje() {
         chatBox.innerHTML += `<div style="text-align: left; margin: 5px 0;"><span style="background: #f3e5f5; padding: 10px 14px; border-radius: 15px 15px 15px 0; display: inline-block; color: #333; font-size: 14px; border: 1px solid #e1bee7; line-height: 1.4;">${respuestaFormateada}</span></div>`;
 
     } catch (error) {
-        console.error(error);
-        document.getElementById(loadingId).innerText = "❌ Error de conexión.";
+        console.error("Error en la API:", error);
+        const loader = document.getElementById(loadingId);
+        if (loader) loader.innerText = "❌ Error de conexión.";
     }
 
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Permitir enviar con Enter
-document.getElementById('userInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') enviarMensaje();
-});
-
-// Animación de entrada inicial de la web
-window.addEventListener('load', () => {
-    console.log("Web de Conectando Almas lista.");
-    const titulo = document.querySelector('h1');
-    if(titulo) {
-        titulo.style.opacity = '0';
-        titulo.style.transform = 'translateY(20px)';
-        titulo.style.transition = 'opacity 1s ease, transform 1s ease';
-        
-        setTimeout(() => {
-            titulo.style.opacity = '1';
-            titulo.style.transform = 'translateY(0)';
-        }, 300);
-    }
-});
-
+// Permitir enviar con Enter (Verificando que exista el input)
+const inputField = document.getElementById('userInput');
+if (inputField) {
+    inputField.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') enviarMensaje();
+    });
+}
