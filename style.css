@@ -37,19 +37,32 @@ body {
     /* ... tus otros estilos de hero ... */
 }
 
-.logo-hero {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    height: 70px; /* Tamaño discreto y elegante */
+/* Contenedor del logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* La imagen propiamente dicha */
+.nav-logo-img {
+    height: 50px; /* Ajustá este valor según qué tan grande quieras el logo */
     width: auto;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Un leve brillo místico */
+    border-radius: 50%; /* Para mantener la forma circular */
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
-.logo-hero:hover {
-    transform: rotate(5deg) scale(1.1); /* Animación suave al pasar el mouse */
+.nav-logo-img:hover {
+    transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+}
+
+/* Asegurate de que la navbar tenga un buen alineamiento */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* Ajusta el espacio lateral */
+    /* ... tus otros estilos de navbar ... */
 }
 
 /* Ajuste para celulares */
@@ -324,4 +337,5 @@ h2::after { content: ''; display: block; width: 50px; height: 4px; background: #
     .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; }
     .social-icons { justify-content: center; display: flex; }
 }
+
 
