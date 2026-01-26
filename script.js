@@ -4,19 +4,25 @@
 
 function toggleInfo(id) {
     const infoDiv = document.getElementById(id);
-    const icon = infoDiv.previousElementSibling.querySelector('i');
-    
-    // Alternamos la clase active
-    infoDiv.classList.toggle('active');
-    
-    // Giramos la flechita
-    if (infoDiv.classList.contains('active')) {
-        icon.style.transform = 'rotate(180deg)';
+    const btn = infoDiv.previousElementSibling;
+    const icon = btn.querySelector('i');
+
+    if (infoDiv.style.maxHeight) {
+        infoDiv.style.maxHeight = null;
+        infoDiv.style.padding = "0";
+        icon.style.transform = "rotate(0deg)";
     } else {
-        icon.style.transform = 'rotate(0deg)';
+        // Cerramos otros que estén abiertos (opcional)
+        document.querySelectorAll('.info-oculta').forEach(el => {
+            el.style.maxHeight = null;
+            el.style.padding = "0";
+        });
+        
+        infoDiv.style.maxHeight = infoDiv.scrollHeight + "px";
+        infoDiv.style.padding = "15px 0";
+        icon.style.transform = "rotate(180deg)";
     }
 }
-
 // ==========================================
 // 2. ANIMACIÓN DE CARGA INICIAL
 // ==========================================
@@ -135,5 +141,6 @@ document.addEventListener('keypress', (e) => {
         enviarMensaje();
     }
 });
+
 
 
