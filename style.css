@@ -9,32 +9,61 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* --- NAVBAR PREMIUM --- */
-/* Actualizaciones en style.css */
+/* --- NAVBAR NORMALIZADO --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.8); /* Color mucho más claro y traslúcido */
+    background: rgba(255, 255, 255, 0.85); /* Fondo clarito */
     backdrop-filter: blur(10px);
-    padding: 5px 8%; /* Nav más angosto */
+    padding: 5px 5%; /* Más angosto y elegante */
+    height: 80px; /* Altura controlada */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     border-bottom: 1px solid rgba(106, 13, 173, 0.1);
 }
 
 .nav-logo-img {
-    height: 80px; /* Logo más grande */
-    mix-blend-mode: multiply; /* Esto ayuda a quitar fondos negros si el logo es oscuro */
-    filter: brightness(1.1);
-    border-radius: 0; /* Sin bordes circulares forzados */
+    height: 90px; /* Logo más grande */
+    width: auto;
+    /* Eliminamos visualmente el fondo negro del logo */
+    mix-blend-mode: multiply; 
+    filter: contrast(1.1);
+}
+
+.nav-links {
+    display: flex; /* Alineación horizontal */
+    gap: 25px;
+    list-style: none;
 }
 
 .nav-links a {
-    color: #4a0e78; /* Letras en un tono púrpura oscuro, más legibles sobre fondo claro */
+    color: #4a0e78; /* Color oscuro para legibilidad */
     font-size: 0.85rem;
     font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.nav-links a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+/* --- ACORDEÓN DE SERVICIOS --- */
+.info-oculta {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    background: #f8f0ff;
+    border-radius: 8px;
+}
 
-.nav-social a { margin-left: 15px; color: #e0d0ff; font-size: 1.2rem; transition: 0.3s; }
-.nav-social a:hover { color: #ffd700; transform: scale(1.2); }
+.info-oculta.active {
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 
 /* --- HERO SECTION --- */
 .hero { 
@@ -106,11 +135,20 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: cente
 .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
 .card:hover { transform: translateY(-10px); }
-
 /* --- FOOTER --- */
-.footer-mistico { background: #0f0518; color: white; padding: 60px 20px 20px; text-align: center; }
-.footer-bottom { margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.8rem; }
-.agusunx { color: #ffd700; text-decoration: none; font-weight: bold; }
+.footer-mistico {
+    background: #1a0b2e;
+    color: #e0d0ff;
+    padding: 40px 5% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
@@ -118,5 +156,6 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: cente
     .nav-links { display: none; } /* Ocultar links en mobile para simplicidad por ahora */
     .nav-logo-img { height: 50px; }
 }
+
 
 
