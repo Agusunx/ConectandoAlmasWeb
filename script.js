@@ -3,17 +3,20 @@
 // ==========================================
 
 // Función para mostrar/ocultar la info de los servicios (Acordeón)
+// Reemplaza tu función toggleInfo por esta:
 function toggleInfo(id) {
     const infoDiv = document.getElementById(id);
-    if (!infoDiv) return;
+    const button = infoDiv.previousElementSibling; // El botón
+    const icon = button.querySelector('i');
 
-    // Usamos clases o estilos calculados para mayor precisión
-    const isVisible = infoDiv.style.display === "block";
-    infoDiv.style.display = isVisible ? "none" : "block";
-    
-    // Si se abre, hacemos un pequeño scroll suave hacia la info
-    if (!isVisible) {
-        infoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (infoDiv.style.maxHeight) {
+        infoDiv.style.maxHeight = null;
+        infoDiv.style.padding = "0 0";
+        icon.style.transform = "rotate(0deg)";
+    } else {
+        infoDiv.style.maxHeight = infoDiv.scrollHeight + "px";
+        infoDiv.style.padding = "10px 0";
+        icon.style.transform = "rotate(180deg)";
     }
 }
 
@@ -135,3 +138,4 @@ document.addEventListener('keypress', (e) => {
         enviarMensaje();
     }
 });
+
