@@ -32,14 +32,34 @@ body {
     transition: all 0.3s ease;
 }
 
-.logo { 
-    font-family: 'Georgia', serif; 
-    font-weight: bold; 
-    font-size: 1.6rem; 
-    color: #fff;
-    /* Doble sombra para efecto neón */
-    text-shadow: 0 0 10px rgba(171, 71, 188, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
-    letter-spacing: 1px;
+.hero {
+    position: relative; /* Esto permite que el logo se ubique respecto al header */
+    /* ... tus otros estilos de hero ... */
+}
+
+.logo-hero {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 70px; /* Tamaño discreto y elegante */
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Un leve brillo místico */
+    transition: transform 0.3s ease;
+}
+
+.logo-hero:hover {
+    transform: rotate(5deg) scale(1.1); /* Animación suave al pasar el mouse */
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .logo-hero {
+        height: 50px;
+        top: 10px;
+        left: 10px;
+    }
+
 }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
@@ -304,3 +324,4 @@ h2::after { content: ''; display: block; width: 50px; height: 4px; background: #
     .footer-bottom { flex-direction: column; justify-content: center; gap: 10px; }
     .social-icons { justify-content: center; display: flex; }
 }
+
