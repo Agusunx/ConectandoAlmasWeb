@@ -10,40 +10,27 @@ body {
 }
 
 /* --- NAVBAR PREMIUM --- */
+/* Actualizaciones en style.css */
 .navbar {
-    background: rgba(15, 5, 30, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 10px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.8); /* Color mucho más claro y traslúcido */
+    backdrop-filter: blur(10px);
+    padding: 5px 8%; /* Nav más angosto */
+    border-bottom: 1px solid rgba(106, 13, 173, 0.1);
 }
-
-.logo { display: flex; align-items: center; }
 
 .nav-logo-img {
-    height: 65px; /* Tamaño ideal para nav */
-    width: auto;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    transition: transform 0.3s ease;
+    height: 80px; /* Logo más grande */
+    mix-blend-mode: multiply; /* Esto ayuda a quitar fondos negros si el logo es oscuro */
+    filter: brightness(1.1);
+    border-radius: 0; /* Sin bordes circulares forzados */
 }
 
-.nav-logo-img:hover { transform: scale(1.1); }
-
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { 
-    text-decoration: none; color: #e0d0ff; font-weight: 500; font-size: 0.9rem;
-    text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+.nav-links a {
+    color: #4a0e78; /* Letras en un tono púrpura oscuro, más legibles sobre fondo claro */
+    font-size: 0.85rem;
+    font-weight: 600;
 }
+
 .nav-links a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
 
 .nav-social a { margin-left: 15px; color: #e0d0ff; font-size: 1.2rem; transition: 0.3s; }
@@ -92,6 +79,28 @@ body {
 .btn-instagram { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
 .btn-whatsapp:hover, .btn-instagram:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
+.info-oculta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.3s ease;
+    background: #f8f0ff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #6a0dad;
+}
+
+.btn-info {
+    background: none;
+    border: 1px solid #dcbbf9;
+    color: #6a0dad;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-info i { transition: transform 0.3s ease; }
 /* --- CARDS --- */
 section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: center; }
 .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -109,4 +118,5 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: cente
     .nav-links { display: none; } /* Ocultar links en mobile para simplicidad por ahora */
     .nav-logo-img { height: 50px; }
 }
+
 
