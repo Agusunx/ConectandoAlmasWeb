@@ -2,21 +2,18 @@
 // 1. FUNCIONES GENERALES DE LA PÁGINA
 // ==========================================
 
-// Función para mostrar/ocultar la info de los servicios (Acordeón)
-// Reemplaza tu función toggleInfo por esta:
 function toggleInfo(id) {
     const infoDiv = document.getElementById(id);
-    const button = infoDiv.previousElementSibling; // El botón
-    const icon = button.querySelector('i');
-
-    if (infoDiv.style.maxHeight) {
-        infoDiv.style.maxHeight = null;
-        infoDiv.style.padding = "0 0";
-        icon.style.transform = "rotate(0deg)";
+    const icon = infoDiv.previousElementSibling.querySelector('i');
+    
+    // Alternamos la clase active
+    infoDiv.classList.toggle('active');
+    
+    // Giramos la flechita
+    if (infoDiv.classList.contains('active')) {
+        icon.style.transform = 'rotate(180deg)';
     } else {
-        infoDiv.style.maxHeight = infoDiv.scrollHeight + "px";
-        infoDiv.style.padding = "10px 0";
-        icon.style.transform = "rotate(180deg)";
+        icon.style.transform = 'rotate(0deg)';
     }
 }
 
@@ -138,4 +135,5 @@ document.addEventListener('keypress', (e) => {
         enviarMensaje();
     }
 });
+
 
