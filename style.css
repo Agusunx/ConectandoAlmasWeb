@@ -9,44 +9,65 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* --- NAVBAR NORMALIZADO --- */
+/* --- NAVBAR LAVANDA MÍSTICO --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.85); /* Fondo clarito */
+    background: rgba(243, 230, 255, 0.9); /* Color lavanda muy claro y elegante */
     backdrop-filter: blur(10px);
-    padding: 5px 5%; /* Más angosto y elegante */
-    height: 80px; /* Altura controlada */
+    padding: 0px 5%; /* Reducimos el alto del nav */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(106, 13, 173, 0.1);
+    height: 75px; 
+}
+
+/* --- LOGO REDONDO SIN BORDES NEGROS --- */
+.logo-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden; /* Esto corta los bordes negros de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* Fondo blanco interno para que el logo resalte */
 }
 
 .nav-logo-img {
-    height: 90px; /* Logo más grande */
+    height: 110%; /* Un poco más grande para que el círculo oculte lo negro */
     width: auto;
-    /* Eliminamos visualmente el fondo negro del logo */
-    mix-blend-mode: multiply; 
-    filter: contrast(1.1);
 }
 
+/* --- MENÚ ALINEADO --- */
 .nav-links {
-    display: flex; /* Alineación horizontal */
+    display: flex;
     gap: 25px;
-    list-style: none;
+    list-style: none; /* Quitamos los puntitos que se veían en la imagen */
 }
 
 .nav-links a {
-    color: #4a0e78; /* Color oscuro para legibilidad */
-    font-size: 0.85rem;
+    color: #4a0e78;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+/* --- BOTÓN COLOR INSTAGRAM --- */
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    border: none !important;
+    color: white !important;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
 }
 
+.btn-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(204, 35, 102, 0.4);
+}
 /* --- ACORDEÓN DE SERVICIOS --- */
 .info-oculta {
     max-height: 0;
@@ -108,15 +129,7 @@ body {
 .btn-instagram { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
 .btn-whatsapp:hover, .btn-instagram:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-.info-oculta {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.3s ease;
-    background: #f8f0ff;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: #6a0dad;
-}
+
 
 .btn-info {
     background: none;
@@ -156,6 +169,7 @@ section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: cente
     .nav-links { display: none; } /* Ocultar links en mobile para simplicidad por ahora */
     .nav-logo-img { height: 50px; }
 }
+
 
 
 
