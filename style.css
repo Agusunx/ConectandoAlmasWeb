@@ -149,3 +149,51 @@ header {
     border-radius: 25px !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
 }
+/* 1. LOGO REDONDO */
+.logo img {
+    height: 80px;
+    width: 80px;          /* Definir ancho igual al alto */
+    object-fit: cover;    /* Evita que se deforme la imagen */
+    border-radius: 50%;   /* Lo hace circular */
+    border: 2px solid var(--oro); /* Un toque místico extra */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* 2. COLOR DE FONDO MÁS CLARO (HERO) */
+/* Ajustamos el gradiente para que no sea tan oscuro al inicio */
+header {
+    height: 90vh;
+    background: linear-gradient(
+        rgba(45, 20, 80, 0.3), /* Purpura mucho más claro y transparente */
+        rgba(26, 11, 46, 0.8)  /* Oscurece un poco hacia abajo para legibilidad */
+    ), 
+    url('fondo2.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3. BOTÓN CON COLOR DE INSTAGRAM */
+.btn-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white !important;
+    border: none;
+}
+
+/* 4. ANIMACIONES AL ACERCAR EL MOUSE (HOVER) */
+.btn-whatsapp, .btn-instagram {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.btn-whatsapp:hover, .btn-instagram:hover {
+    transform: scale(1.1); /* Efecto de agrandado suave (pop) */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-whatsapp:active, .btn-instagram:active {
+    transform: scale(0.95); /* Efecto de pulsado */
+}
+
