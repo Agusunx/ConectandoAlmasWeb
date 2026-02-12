@@ -1,88 +1,53 @@
-/* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background-color: #fbf7ff; overflow-x: hidden; }
-
-/* --- NAVBAR LAVANDA (NO BLANCO) --- */
+/* NAVBAR */
 .navbar {
-    background: rgba(235, 218, 255, 0.95); /* Tono lavanda suave */
-    backdrop-filter: blur(10px);
-    padding: 5px 8%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
+    padding: 14px 40px;
+    background: #f8d3e7;            /* rosa pastel claro */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
     top: 0;
-    z-index: 1000;
-    height: 85px;
-    border-bottom: 1px solid #dcbbf9;
+    z-index: 100;
 }
 
-/* --- LOGO REDONDO SIN BORDES NEGROS --- */
-.logo-container {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    overflow: hidden; /* Corta el fondo negro del logo.png */
-    background: white;
+/* LOGO */
+.logo img {
+    height: 80px;                   /* tamaño correcto y prolijo */
+   
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #6a0dad;
+
 }
 
-.nav-logo-img {
-    height: 110%; /* Escalado para ocultar bordes negros */
-    width: auto;
-    object-fit: cover;
+/* LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
 }
 
-/* --- MENÚ ALINEADO --- */
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { 
-    text-decoration: none; 
-    color: #4a0e78; 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    font-size: 0.85rem; 
+.nav-links a {
+    text-decoration: none;
+    color: #5b1b6f;
+    font-weight: 600;
+    font-size: 15px;
 }
 
-/* --- HERO --- */
-.hero { 
-    min-height: 100vh; 
-    background: linear-gradient(rgba(26,11,46,0.5), rgba(26,11,46,0.5)), url('fondo4.png');
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    color: white; padding-top: 85px;
+/* REDES */
+.nav-social {
+    display: flex;
+    gap: 14px;
 }
 
-.titulo-mistico { font-size: 3.5rem; margin-bottom: 10px; color: #dcbbf9; }
-
-/* --- BOTONES --- */
-.btn-whatsapp { background: #128C7E; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; }
-
-/* BOTÓN INSTAGRAM COLOR OFICIAL */
-.btn-instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
-    color: white !important;
-    padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold;
-    border: none !important; display: inline-block; transition: 0.3s;
+.nav-social a {
+    color: #7a2c8f;
+    font-size: 20px;
 }
-.btn-instagram:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4); }
 
-/* --- CARDS Y ACORDEÓN --- */
-section { padding: 60px 8%; text-align: center; }
-.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-.card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-.info-oculta {
-    max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out;
-    background: #f3e6ff; border-radius: 10px; margin-top: 0;
+/* RESPONSIVE BÁSICO */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
-.btn-info { background: none; border: 1px solid #6a0dad; color: #6a0dad; padding: 8px 15px; border-radius: 20px; cursor: pointer; margin: 15px 0; }
-
-/* --- FOOTER --- */
-.footer-mistico { background: #0f0518; color: white; padding: 40px 8% 20px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-.footer-bottom { margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.8rem; }
-.agusunx { color: #ffd700; text-decoration: none; font-weight: bold; }
