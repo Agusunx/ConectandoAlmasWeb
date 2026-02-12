@@ -1,53 +1,151 @@
-/* NAVBAR */
+/* Importar fuente mística */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --oro: #d4af37;
+    --purpura-oscuro: #1a0b2e;
+    --purpura-claro: #6a0dad;
+    --blanco-cristal: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--purpura-oscuro);
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* NAVBAR MÍSTICA */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 40px;
-    background: #f8d3e7;            /* rosa pastel claro */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 10px 50px;
+    background: rgba(26, 11, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--blanco-cristal);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
-/* LOGO */
 .logo img {
-    height: 80px;                   /* tamaño correcto y prolijo */
-   
-    display: flex;
-
+    height: 70px;
+    filter: drop-shadow(0 0 5px var(--purpura-claro));
 }
 
-/* LINKS */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 28px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #5b1b6f;
-    font-weight: 600;
-    font-size: 15px;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+    letter-spacing: 1px;
 }
 
-/* REDES */
-.nav-social {
+.nav-links a:hover {
+    color: var(--oro);
+    text-shadow: 0 0 8px var(--oro);
+}
+
+/* SECCIÓN HERO (INICIO) */
+header {
+    height: 90vh;
+    background: linear-gradient(rgba(26, 11, 46, 0.4), rgba(26, 11, 46, 0.9)), 
+                url('fondo2.jpg') no-repeat center center/cover;
     display: flex;
-    gap: 14px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-.nav-social a {
-    color: #7a2c8f;
-    font-size: 20px;
+.phrase {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-/* RESPONSIVE BÁSICO */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-    }
+/* BOTONES CON ESTILO */
+.btn-whatsapp, .btn-instagram, .btn-card-action {
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.btn-card-action {
+    background: transparent;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+}
+
+.btn-card-action:hover {
+    background: var(--oro);
+    color: var(--purpura-oscuro);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* CARDS DE SERVICIOS */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    background: url('fondo3.png') no-repeat center center/cover;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--blanco-cristal);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--purpura-claro);
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);
+}
+
+.card h3 {
+    color: var(--oro);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+/* CHATBOT REESTILIZADO */
+#chat-widget {
+    bottom: 30px !important;
+    right: 30px !important;
+}
+
+#chat-widget button {
+    background: linear-gradient(45deg, var(--purpura-claro), #8e44ad) !important;
+    border-radius: 25px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
 }
